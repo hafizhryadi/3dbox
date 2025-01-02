@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&family=Satisfy&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+}
+.box {
+    position: absolute;
+    top: 120px;
+    width: 240px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: 1.5s;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        width: 240px;
+        aspect-ratio: 1;
+        background: #444;
+        opacity: .5;
+        z-index: 10;
+        transform: translateY(240px) rotateX(90deg) scale(1.1);
+        filter: blur(40px);
+    }
+    .card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        background: gold;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 90deg)) translateZ(120px);
+        backface-visibility: hidden;
+        
+        .imgCont {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                aspect-ratio: 1;
+                object-fit: cover;
+            }
+        }
+        h2 {
+            position: relative;
+            text-align: center;
+            transform-style: preserve-3d;
+            line-height: 1rem;
+            transform: translateZ(30px);
+            backface-visibility: hidden;
+        }
+    }
+}
+figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    translate: 0 -25vh;
+
+    div {
+        position: relative;
+        width: 60px;
+        aspect-ratio: 1;
+        border: 2px solid;
+        border-radius: 50%;
+        background: gold;
+        cursor: pointer;
+        transition: .2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        &:hover {
+            background: #242424;
+
+            svg {
+                fill: gold;
+            }
+        }
+        &:active {
+            scale: .8;
+        }
+        svg {
+            transition: .5s;
+        }
+    }
+}
