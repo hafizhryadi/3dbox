@@ -1,9 +1,9 @@
 const CACHE_NAME = 'SW-001';
 const toCache = [
     '/',
-    '/web.webmanifest',
-    '/register.js',
-    '/icon.png',
+    'web.webmanifest',
+    'register.js',
+    'icon.png',
 ];
 
 self.addEventListener('install', function(event) {
